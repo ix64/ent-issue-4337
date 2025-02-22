@@ -4,8 +4,8 @@ package ent
 
 import (
 	"context"
-	"ent-issue-250222/ent/predicate"
-	"ent-issue-250222/ent/user"
+	"ent-issue-4337/ent/predicate"
+	"ent-issue-4337/ent/user"
 
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"

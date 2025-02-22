@@ -4,7 +4,7 @@ package ent
 
 import (
 	"context"
-	"ent-issue-250222/ent/user"
+	"ent-issue-4337/ent/user"
 	"errors"
 	"fmt"
 	"time"
@@ -79,7 +79,7 @@ func (uc *UserCreate) defaults() {
 // check runs all checks and user-defined validators on the builder.
 func (uc *UserCreate) check() error {
 	switch uc.driver.Dialect() {
-	case dialect.MySQL, dialect.SQLite:
+	case dialect.SQLite:
 		if _, ok := uc.mutation.CreatedAt(); !ok {
 			return &ValidationError{Name: "created_at", err: errors.New(`ent: missing required field "User.created_at"`)}
 		}

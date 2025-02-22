@@ -11,7 +11,7 @@ var (
 	// UsersColumns holds the columns for the "users" table.
 	UsersColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "created_at", Type: field.TypeTime, Default: map[string]schema.Expr{"postgres": "NOW()"}},
+		{Name: "created_at", Type: field.TypeTime, Default: map[string]schema.Expr{"mysql": "NOW()", "postgres": "NOW()", "sqlite3": "CURRENT_TIMESTAMP"}},
 	}
 	// UsersTable holds the schema information for the "users" table.
 	UsersTable = &schema.Table{

@@ -21,6 +21,8 @@ func (User) Fields() []ent.Field {
 			Default(time.Now).
 			Annotations(entsql.DefaultExprs(map[string]string{
 				dialect.Postgres: "NOW()",
+				dialect.MySQL:    "NOW()",
+				dialect.SQLite:   "CURRENT_TIMESTAMP",
 			})),
 	}
 }
